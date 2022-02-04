@@ -40,5 +40,11 @@ module Types
     def comment(id:)
       Comment.where(id: id).first
     end
+
+    field :comments, [Types::PostType], null: false,
+          description: "Return an array of Comment types"
+    def comments
+      Comment.all
+    end
   end
 end
