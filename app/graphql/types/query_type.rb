@@ -28,6 +28,12 @@ module Types
       Post.where(id: id).first
     end
 
+    field :posts, [Types::PostType], null: false,
+          description: "Return an array of Post types"
+    def posts
+      Post.all
+    end
+
     field :comment, Types::CommentType, {null: false, description: "Return an instance of Comment type"} do
       argument :id, ID, required: true
     end
