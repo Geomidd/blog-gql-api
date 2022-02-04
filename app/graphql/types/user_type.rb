@@ -5,6 +5,7 @@ class Types::UserType < Types::BaseObject
   field :last_name, String, null: true
   field :country, String, null: true
 
+  field :full_name, String, null: true
   field :posts, [Types::PostType], null: true
 
 end
