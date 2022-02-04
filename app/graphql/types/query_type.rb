@@ -15,6 +15,12 @@ module Types
       User.where(id: id).first
     end
 
+    field :users, [Types::UserType], null: false,
+          description: "Return an array of User types"
+    def users
+      User.all
+    end
+
     field :post, Types::PostType, {null: false, description: "Return an instance of Post type"} do
       argument :id, ID, required: true
     end
