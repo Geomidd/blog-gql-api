@@ -21,5 +21,12 @@ module Types
     def post(id:)
       Post.where(id: id).first
     end
+
+    field :comment, Types::CommentType, {null: false, description: "Return an instance of Comment type"} do
+      argument :id, ID, required: true
+    end
+    def comment(id:)
+      Comment.where(id: id).first
+    end
   end
 end
