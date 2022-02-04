@@ -14,5 +14,12 @@ module Types
     def user(id:)
       User.where(id: id).first
     end
+
+    field :post, Types::PostType, {null: false, description: "Return an instance of Post type"} do
+      argument :id, ID, required: true
+    end
+    def post(id:)
+      Post.where(id: id).first
+    end
   end
 end
